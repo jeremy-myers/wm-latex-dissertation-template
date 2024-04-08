@@ -1,0 +1,101 @@
+\documentclass[cpp,11pt]{WM-thesis}
+
+% ----------------------------------------------------------------
+% --- Packages
+% ----------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Bibliography
+\usepackage{csquotes}
+\usepackage{bibentry}
+\usepackage{cite}
+\usepackage{tocloft}
+
+ \usepackage[space=true]{accsupp}
+ % requires the latest version of package accsupp
+ \newcommand{\copyablespace}{\BeginAccSupp{method=hex,unicode,ActualText=00A0}\
+ \EndAccSupp{}}
+
+% Math
+\usepackage{amsfonts,amsmath,amssymb,amsbsy}
+\usepackage{mathtools}
+
+% Compiling
+\pdfsuppresswarningpagegroup=1
+% ----------------------------------------------------------------
+
+\nobibliography*
+
+\renewcommand{\rmdefault}{cmr} % Arial
+\renewcommand{\sfdefault}{cmr} % Arial
+\renewcommand{\cftchapfont}{\rm } %no bold in toc
+\renewcommand{\cftchappagefont}{\rm } %no bold in toc
+
+% ----------------------------------------------------------------
+% - Set the title that will be printed on the Contents page
+% ----------------------------------------------------------------
+% The negative vspace is used to make sure that only one line is
+% between the title and the first line for each of these pages.
+\renewcommand{\contentsname}{\begin{center}
+                               \Large\normalfont TABLE OF CONTENTS\vspace{-.5in}
+\end{center}}
+\renewcommand\listfigurename{\begin{center}
+                               \Large\normalfont LIST OF FIGURES\vspace{-.35in}
+\end{center}}
+\renewcommand\listtablename{\begin{center}
+                              \Large\normalfont LIST OF TABLES\vspace{-.35in}
+\end{center}}
+% ---------------------------------------------------------------
+% ---------------------------------------------------------------
+% ---------------------------------------------------------------
+
+\begin{document}
+\doublespacing
+
+% ---------------------------------------------------------------
+% - Set thesis info
+% ---------------------------------------------------------------
+\thesisTitle{Title} % Title cannot be in ALL CAPS
+\thesisAuthor[Your name full]{Also your name}
+\thesisMonth{Month}
+\thesisYear{Year}
+\thesisAdvisor{Advisor}
+\thesisLocation{Hometown}
+\thesisDegreeThree{Bachelor of Science, University 3, Year 3}
+\thesisDegreeTwo{Bachelor of Science, University 2, Year 2} 
+\thesisDegreeOne{Master of Science, University 1, Year 1}
+\thesisCommittee[Professor, Computer Science]{\ThesisAdvisor}
+\thesisCommittee[Professor, Computer Science]{Professor 1}
+\thesisCommittee[Professor, Computer Science]{Professor 2}
+\thesisCommittee[Professor, Computer Science]{Professor 3}
+\thesisCommittee[Professor, Computer Science]{Professor 4}
+
+% - Dedication
+\thesisDedication{Dedication.}
+
+% - Acknowledgments
+\thesisAcknowledge{acknowledge}
+
+% - Abstract
+\thesisAbstract{abstract}
+
+% - Create the dissertation Prolog
+\makeThesisProlog
+
+% - Contents
+\chapter{Chapter}
+Here I cite \LaTeX~\cite{lamport86latex}.
+
+% - Appendices
+\clearpage
+\appendix
+
+% - List of references
+\bibliographystyle{WM-bib}
+\bibliography{refs}
+\makeThesisVita{vita}
+% ---------------------------------------------------------------
+% ---------------------------------------------------------------
+% ---------------------------------------------------------------
+\end{document}
